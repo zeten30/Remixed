@@ -4,7 +4,7 @@ Release:	1%{?dist}
 Summary:	Remix of Arc GTK2/3 themes
 Group:		User Interface/Desktops
 License:	GPL-3
-URL:		https://github.com/zeten30/remixed-theme
+URL:		https://github.com/zeten30/Remixed
 Vendor:		Milan Zink <zeten30@gmail.com>
 Source0:	remixed-themes.tar.gz
 Requires: 	gtk-murrine-engine gtk2-engines adobe-source-sans-pro-fonts adobe-source-code-pro-fonts
