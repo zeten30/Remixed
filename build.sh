@@ -11,7 +11,7 @@ VimixGITdir="${BaseDir}/git/vimix-gtk-themes"
 FlatRemixGIT="https://github.com/daniruiz/Flat-Remix.git"
 FlatRemixGITdir="${BaseDir}/git/Flat-Remix"
 
-RPMBuild="/home/brq/mzink/Projects/RH/rpmbuild"
+RPMBuild="${BaseDir}/rpm"
 RPMSources="${RPMBuild}/SOURCES/"
 RPMSpecs="${RPMBuild}/SPECS/"
 
@@ -161,7 +161,7 @@ echo "------------------------------------------------------------------------"
 rm -rf ${BaseDir}/icons/Remixed-Dark/places/scalable
 rm -rf ${BaseDir}/icons/Remixed-Light/places/scalable
 
-# Override folders
+# Overide folders
 cp -fru ${BaseDir}/icons-places/Dark ${BaseDir}/icons/Remixed-Dark/places/scalable
 cp -fru ${BaseDir}/icons-places/Light ${BaseDir}/icons/Remixed-Light/places/scalable
 
@@ -198,7 +198,13 @@ cd ${BaseDir}
 tar czf remixed-themes.tar.gz themes
 mv remixed-themes.tar.gz ${RPMSources}
 
+#Terminix
+cd ${BaseDir}
+tar cfz remixed-terminix-scheme.tar.gz terminix/
+mv ${BaseDir}/remixed-terminix-scheme.tar.gz ${RPMSources}
+
 #SPECS
+rm -rf ${RPMSpecs}/*.*
 cp ${BaseDir}/*.spec  ${RPMSpecs}
 
 
@@ -206,9 +212,12 @@ cp ${BaseDir}/*.spec  ${RPMSpecs}
 echo -e "\nBuild SPRMS"
 echo "------------------------------------------------------------------------"
 
+rm -rf ${RPMBuild}/SRPMS/*.rpm ${RPMBuild}/SRPMS/*.log
+
 cd ${RPMBuild}
 mock -r ${MockConfig} --spec=SPECS/remixed-themes.spec --sources=SOURCES/ --resultdir=SRPMS/ --buildsrpm
 mock -r ${MockConfig} --spec=SPECS/remixed-icons.spec --sources=SOURCES/ --resultdir=SRPMS/ --buildsrpm
+mock -r ${MockConfig} --spec=SPECS/remixed-terminix-scheme.spec --sources=SOURCES/ --resultdir=SRPMS/ --buildsrpm
 
 cd ${BaseDir}
 

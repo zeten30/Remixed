@@ -1,4 +1,4 @@
-Name:		Remixed-terminix-schemes
+Name:		Remixed-terminix-scheme
 Version:	1.0
 Release:	1%{?dist}
 Summary:	Remixed scheme for Terminix
@@ -6,7 +6,7 @@ Group:		User Interface/Desktops
 License:	GPL-3
 URL:		https://github.com/zeten30/Remixed
 Vendor:		Milan Zink <zeten30@gmail.com>
-Source0:	terminix-Remixed.json
+Source0:	remixed-terminix-scheme.tar.gz
 Requires: 	terminix
 BuildArch:	noarch
 
@@ -14,13 +14,13 @@ BuildArch:	noarch
 Remixed scheme for Terminix
 
 %prep
-# %setup -q -n themes
+%setup -q -n terminix
 
 %build
 # Nothing to build
 
 %install
-#%{__install} -d -m755 %{buildroot}%{_datadir}/terminix/schemes/
+%{__install} -d -m755 %{buildroot}%{_datadir}/terminix/schemes/
 %{__cp} -pr terminix-Remixed.json %{buildroot}%{_datadir}/terminix/schemes/
 
 %files

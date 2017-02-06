@@ -2,3 +2,6 @@ git/Flat*
 git/vimix*
 icons/Remixed*
 themes/Remixed*
+rpm/SRPMS/*.log
+rpm/SPECS/*.spec
+rpm/SOURCES/*.gz
