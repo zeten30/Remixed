@@ -57,6 +57,12 @@ repodir=${VimixGITdir}
 srcdir=${repodir}/src
 dest_dir=${BaseDir}/themes
 
+# Tweak assets
+cp ${BaseDir}/assets/* ${BaseDir}/git/vimix-gtk-themes/src/gnome-shell/assets/
+cp ${BaseDir}/assets/* ${BaseDir}/git/vimix-gtk-themes/src/gnome-shell/assets-Ruby/
+cp ${BaseDir}/assets/* ${BaseDir}/git/vimix-gtk-themes/src/gnome-shell/assets-Doder/
+
+
 # Adjusted Vimix install script
 for variant in 'Dark' 'Light' ; do
   for size in '' '-Laptop' ; do

@@ -1,6 +1,6 @@
 Name:		Remixed-themes
 Version:	1.0
-Release:	1%{?dist}
+Release:	2%{?dist}
 Summary:	Remix of Arc GTK2/3 themes
 Group:		User Interface/Desktops
 License:	GPL-3
@@ -33,5 +33,8 @@ done
 %{_datadir}/themes/Remixed-Dark-Laptop
 
 %changelog
+* Wed Feb 8 2017 Milan Zink <zeten30@gmail.com> - 1.0.2
+- Gnome shell theme tweaks
+
 * Thu Feb 2 2017 Milan Zink <zeten30@gmail.com> - 1.0.1
 - Initial package for Fedora
